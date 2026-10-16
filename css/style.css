@@ -1,0 +1,413 @@
+/* ==========================================================================
+   1. ĐỊNH NGHĨA BIẾN VÀ RESET CƠ BẢN (CSS VARIABLES & RESET)
+   ========================================================================== */
+:root {
+    /* Bảng màu tham chiếu CellphoneS (Đã tinh chỉnh tương phản) */
+    --primary-color: #d70018;       /* Đỏ thương hiệu CellphoneS */
+    --primary-hover: #b50014;       /* Đỏ đậm khi tương tác */
+    --bg-page: #f4f5f7;             /* Màu nền trang màu xám nhạt */
+    --bg-card: #ffffff;             /* Màu nền thẻ trắng */
+    --text-primary: #1f2937;        /* Chữ chính màu đen xám */
+    --text-secondary: #6b7280;      /* Chữ phụ màu xám trung tính */
+    --border-color: #e5e7eb;        /* Đường viền xám nhạt */
+    
+    /* Màu sắc nhãn & ưu đãi */
+    --badge-red-bg: #fee2e2;
+    --badge-red-text: #991b1b;
+    --benefit-blue-bg: #f0f9ff;
+    --benefit-blue-border: #bae6fd;
+    --benefit-blue-text: #075985;
+
+    /* Font & Khoảng cách */
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --radius-card: 12px;
+    --radius-sm: 6px;
+    --transition-fast: 0.2s ease;
+}
+
+/* Reset lề và định dạng kích thước chuẩn */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.5;
+    padding-bottom: 40px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Quản lý đường viền Focus phục vụ Accessibility */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* ==========================================================================
+   2. HEADER & FOOTER
+   ========================================================================== */
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    margin-bottom: 24px;
+}
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+.brand-accent {
+    color: var(--primary-color);
+}
+
+.demo-badge {
+    background-color: #f3f4f6;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    font-weight: 600;
+}
+
+.header-note {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.site-footer {
+    margin-top: 48px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-color);
+    background-color: #ffffff;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.footer-content p + p {
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   3. TIÊU ĐỀ BỐ CỤC (SECTION HEADER)
+   ========================================================================== */
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   4. LƯỚI SẢN PHẨM RESPONSIVE (CSS GRID)
+   ========================================================================== */
+.product-grid {
+    display: grid;
+    /* Default Desktop: 4 Cột */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* ==========================================================================
+   5. THIẾT KẾ THẺ SẢN PHẨM (PRODUCT CARD)
+   ========================================================================== */
+.product-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* 5.1 Badges góc trên */
+.card-badges {
+    display: flex;
+    gap: 6px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+}
+
+.badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+}
+
+.badge-discount {
+    background-color: var(--badge-red-bg);
+    color: var(--badge-red-text);
+}
+
+.badge-installment {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+/* 5.2 Khối hình ảnh sản phẩm */
+.product-image-block {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fafafa;
+    border-radius: var(--radius-sm);
+}
+
+.product-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* 5.3 Thân thẻ & Tên sản phẩm */
+.product-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    /* Cho phép hiển thị đầy đủ tên, không gượng ép cắt chữ */
+    min-height: 2.8em;
+}
+
+.product-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+/* 5.4 Tag thông số kỹ thuật (Specs Pills) */
+.specs-pills {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.specs-pills li {
+    font-size: 0.75rem;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* 5.5 Khối giá sản phẩm */
+.price-box {
+    margin-bottom: 10px;
+    background-color: #fef2f2;
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary-color);
+}
+
+.price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.price-sale {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-original {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+.price-type-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+/* 5.6 Ưu đãi có điều kiện */
+.conditional-benefit {
+    background-color: var(--benefit-blue-bg);
+    border: 1px dashed var(--benefit-blue-border);
+    border-radius: var(--radius-sm);
+    padding: 8px;
+    margin-bottom: 12px;
+    font-size: 0.78rem;
+}
+
+.benefit-tag {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--benefit-blue-text);
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    margin-bottom: 2px;
+}
+
+.benefit-text {
+    color: #1e293b;
+}
+
+/* 5.7 Accordion cấu hình bằng HTML <details> (Không dùng JS) */
+.specs-accordion {
+    margin-top: auto;
+    margin-bottom: 0;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.accordion-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 10px 12px;
+    min-height: 44px;
+    background-color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Ẩn mũi tên mặc định trình duyệt */
+}
+
+.accordion-header::-webkit-details-marker {
+    display: none; /* Ẩn mũi tên trên Chrome/Safari */
+}
+
+.accordion-icon {
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: transform var(--transition-fast);
+}
+
+.specs-accordion[open] .accordion-icon {
+    transform: rotate(45deg); /* Đổi dấu + thành x khi mở */
+}
+
+.accordion-body {
+    padding: 8px 10px;
+    background-color: #ffffff;
+    border-top: 1px solid var(--border-color);
+}
+
+.specs-list {
+    font-size: 0.75rem;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+
+.spec-item + .spec-item {
+    border-top: 1px dashed #f3f4f6;
+}
+
+.spec-item dt {
+    color: var(--text-secondary);
+}
+
+.spec-item dd {
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: right;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Tablet: Dưới 992px -> 2 Cột */
+@media (max-width: 991px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* Mobile: Dưới 600px -> 1 Cột */
+@media (max-width: 599px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .product-card {
+        padding: 12px;
+    }
+
+    .price-sale {
+        font-size: 1.05rem;
+    }
+}
+
+/* Cai tien vung bam tren Tablet va Mobile */
+@media (max-width: 991px) {
+    .accordion-header {
+        min-height: 44px;
+        padding: 10px 12px;
+        font-size: 0.875rem;
+    }
+}
+

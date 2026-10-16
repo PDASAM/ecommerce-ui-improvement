@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Cải Tiến Giao Diện Product Card Laptop - CellphoneS UI Improvement</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header giao diện Demo -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-area">
+                <span class="brand-name">Cellphone<span class="brand-accent">S</span></span>
+                <span class="demo-badge">UI Redesign Demo</span>
+            </div>
+            <p class="header-note">Bài tập cá nhân môn Phát triển ứng dụng WEB/TMĐT – <em>Giao diện mô phỏng, không phải website bán hàng thật. Giá và cấu hình chỉ mang tính minh họa.</em></p>
+        </div>
+    </header>
+
+    <!-- Khu vực nội dung chính -->
+    <main class="main-content container">
+        
+        <!-- Tiêu đề khu vực sản phẩm -->
+        <section class="product-section" aria-labelledby="section-title">
+            <div class="section-header">
+                <h1 id="section-title" class="section-title">Laptop Nổi Bật</h1>
+                <span class="subtitle">Thiết kế thẻ sản phẩm tối giản, hiển thị đầy đủ tên & cấu hình so sánh nhanh</span>
+            </div>
+
+            <!-- Lưới sản phẩm (Product Grid) -->
+            <div class="product-grid">
+
+                <!-- SẢN PHẨM 1 -->
+                <article class="product-card">
+                    <div class="card-badges" aria-label="Nhãn ưu đãi">
+                        <span class="badge badge-discount">-9%</span>
+                        <span class="badge badge-installment">Trả góp 0%</span>
+                    </div>
+
+                    <figure class="product-image-block">
+                        <img src="images/laptop-1.svg" alt="Hình minh họa laptop ASUS Vivobook 14 X1407CA-LY008W màu bạc" class="product-img" loading="lazy">
+                    </figure>
+
+                    <div class="product-body">
+                        <!-- Hiển thị đầy đủ tên sản phẩm -->
+                        <h2 class="product-title">
+                            <span class="product-link">Laptop ASUS Vivobook 14 X1407CA-LY008W</span>
+                        </h2>
+
+                        <!-- Thông số kỹ thuật cốt lõi dạng Tag/Pills -->
+                        <ul class="specs-pills" aria-label="Thông số kỹ thuật chính">
+                            <li>Intel Core 5-120U</li>
+                            <li>RAM 16GB</li>
+                            <li>SSD 512GB</li>
+                            <li>14" WUXGA</li>
+                        </ul>
+
+                        <!-- Khối giá minh bạch -->
+                        <div class="price-box">
+                            <div class="price-row">
+                                <strong class="price-sale">23.590.000&nbsp;đ</strong>
+                                <del class="price-original">25.990.000&nbsp;đ</del>
+                            </div>
+                            <span class="price-type-label">Giá bán tham khảo (minh họa)</span>
+                        </div>
+
+                        <!-- Khối ưu đãi có điều kiện tách biệt -->
+                        <div class="conditional-benefit">
+                            <span class="benefit-tag">Ưu đãi HSSV</span>
+                            <p class="benefit-text">Giảm thêm <strong>1.000.000 đ</strong> cho S-Student</p>
+                        </div>
+
+                        <!-- Chi tiết cấu hình không cần JavaScript -->
+                        <details class="specs-accordion">
+                            <summary class="accordion-header">
+                                <span>Xem cấu hình chi tiết (Demo)</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <dl class="specs-list">
+                                    <div class="spec-item"><dt>Card đồ họa:</dt><dd>Intel Graphics</dd></div>
+                                    <div class="spec-item"><dt>Trọng lượng:</dt><dd>1.4 kg</dd></div>
+                                    <div class="spec-item"><dt>Hệ điều hành:</dt><dd>Windows 11 Home</dd></div>
+                                </dl>
+                            </div>
+                        </details>
+
+                        <!-- Nút thao tác rõ ràng (Không giả lập giỏ hàng) -->
+                    </div>
+                </article>
+
+                <!-- SẢN PHẨM 2 -->
+                <article class="product-card">
+                    <div class="card-badges" aria-label="Nhãn ưu đãi">
+                        <span class="badge badge-discount">-12%</span>
+                        <span class="badge badge-installment">Trả góp 0%</span>
+                    </div>
+
+                    <figure class="product-image-block">
+                        <img src="images/laptop-2.svg" alt="Hình minh họa laptop Apple MacBook Air 13 inch M2 2022 màu xám" class="product-img" loading="lazy">
+                    </figure>
+
+                    <div class="product-body">
+                        <h2 class="product-title">
+                            <span class="product-link">Laptop Apple MacBook Air 13 inch M2 2022 (8CPU/8GPU)</span>
+                        </h2>
+
+                        <ul class="specs-pills" aria-label="Thông số kỹ thuật chính">
+                            <li>Apple M2 Chip</li>
+                            <li>RAM 8GB</li>
+                            <li>SSD 256GB</li>
+                            <li>13.6" Liquid Retina</li>
+                        </ul>
+
+                        <div class="price-box">
+                            <div class="price-row">
+                                <strong class="price-sale">24.490.000&nbsp;đ</strong>
+                                <del class="price-original">27.990.000&nbsp;đ</del>
+                            </div>
+                            <span class="price-type-label">Giá bán tham khảo (minh họa)</span>
+                        </div>
+
+                        <div class="conditional-benefit">
+                            <span class="benefit-tag">Thu cũ đổi mới</span>
+                            <p class="benefit-text">Trợ giá lên đời đến <strong>2.000.000 đ</strong></p>
+                        </div>
+
+                        <details class="specs-accordion">
+                            <summary class="accordion-header">
+                                <span>Xem cấu hình chi tiết (Demo)</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <dl class="specs-list">
+                                    <div class="spec-item"><dt>Cổng kết nối:</dt><dd>MagSafe 3, 2x Thunderbolt</dd></div>
+                                    <div class="spec-item"><dt>Trọng lượng:</dt><dd>1.24 kg</dd></div>
+                                    <div class="spec-item"><dt>Hệ điều hành:</dt><dd>macOS</dd></div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <!-- SẢN PHẨM 3 -->
+                <article class="product-card">
+                    <div class="card-badges" aria-label="Nhãn ưu đãi">
+                        <span class="badge badge-discount">-15%</span>
+                        <span class="badge badge-installment">Trả góp 0%</span>
+                    </div>
+
+                    <figure class="product-image-block">
+                        <img src="images/laptop-3.svg" alt="Hình minh họa laptop Gaming MSI Cyborg 15 A13UC-2082VN màu đen" class="product-img" loading="lazy">
+                    </figure>
+
+                    <div class="product-body">
+                        <h2 class="product-title">
+                            <span class="product-link">Laptop Gaming MSI Cyborg 15 A13UC-2082VN</span>
+                        </h2>
+
+                        <ul class="specs-pills" aria-label="Thông số kỹ thuật chính">
+                            <li>i7-13620H</li>
+                            <li>RAM 16GB</li>
+                            <li>SSD 512GB</li>
+                            <li>RTX 3050 4GB</li>
+                        </ul>
+
+                        <div class="price-box">
+                            <div class="price-row">
+                                <strong class="price-sale">22.990.000&nbsp;đ</strong>
+                                <del class="price-original">26.990.000&nbsp;đ</del>
+                            </div>
+                            <span class="price-type-label">Giá bán tham khảo (minh họa)</span>
+                        </div>
+
+                        <div class="conditional-benefit">
+                            <span class="benefit-tag">Quà tặng kèm</span>
+                            <p class="benefit-text">Tặng Balo Gaming MSI cao cấp</p>
+                        </div>
+
+                        <details class="specs-accordion">
+                            <summary class="accordion-header">
+                                <span>Xem cấu hình chi tiết (Demo)</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <dl class="specs-list">
+                                    <div class="spec-item"><dt>Màn hình:</dt><dd>15.6" Full HD 144Hz</dd></div>
+                                    <div class="spec-item"><dt>Trọng lượng:</dt><dd>1.98 kg</dd></div>
+                                    <div class="spec-item"><dt>Bàn phím:</dt><dd>LED Translucent</dd></div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+                <!-- SẢN PHẨM 4 -->
+                <article class="product-card">
+                    <div class="card-badges" aria-label="Nhãn ưu đãi">
+                        <span class="badge badge-discount">-4%</span>
+                        <span class="badge badge-installment">Trả góp 0%</span>
+                    </div>
+
+                    <figure class="product-image-block">
+                        <img src="images/laptop-4.svg" alt="Hình minh họa laptop HP OmniBook 5 AI 16-AF1048TU màu bạc" class="product-img" loading="lazy">
+                    </figure>
+
+                    <div class="product-body">
+                        <h2 class="product-title">
+                            <span class="product-link">Laptop HP OmniBook 5 AI 16-AF1048TU BZ7Q9PA</span>
+                        </h2>
+
+                        <ul class="specs-pills" aria-label="Thông số kỹ thuật chính">
+                            <li>AMD Ryzen AI 7</li>
+                            <li>RAM 16GB</li>
+                            <li>SSD 512GB</li>
+                            <li>16" WUXGA Touch</li>
+                        </ul>
+
+                        <div class="price-box">
+                            <div class="price-row">
+                                <strong class="price-sale">26.990.000&nbsp;đ</strong>
+                                <del class="price-original">27.990.000&nbsp;đ</del>
+                            </div>
+                            <span class="price-type-label">Giá bán tham khảo (minh họa)</span>
+                        </div>
+
+                        <div class="conditional-benefit">
+                            <span class="benefit-tag">Ưu đãi HSSV</span>
+                            <p class="benefit-text">Giảm thêm <strong>1.000.000 đ</strong> cho S-Student</p>
+                        </div>
+
+                        <details class="specs-accordion">
+                            <summary class="accordion-header">
+                                <span>Xem cấu hình chi tiết (Demo)</span>
+                                <span class="accordion-icon" aria-hidden="true">+</span>
+                            </summary>
+                            <div class="accordion-body">
+                                <dl class="specs-list">
+                                    <div class="spec-item"><dt>Tính năng AI:</dt><dd>Copilot+ PC sẵn có</dd></div>
+                                    <div class="spec-item"><dt>Trọng lượng:</dt><dd>1.8 kg</dd></div>
+                                    <div class="spec-item"><dt>Chất liệu:</dt><dd>Vỏ nhôm nguyên khối</dd></div>
+                                </dl>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+
+            </div> <!-- Kết thúc .product-grid -->
+        </section>
+
+    </main>
+
+    <!-- Footer minh bạch thông tin bài tập -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p><strong>Ghi chú bài tập:</strong> Mẫu thiết kế phục vụ thực hành môn Phát triển ứng dụng WEB/TMĐT.</p>
+            <p>Sử dụng kỹ thuật thuần HTML5 & CSS3 Responsive (Grid/Flexbox). Dữ liệu cấu hình và giá cả là dữ liệu minh họa.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#fafafa" />
+  <rect x="75" y="35" width="250" height="135" rx="6" fill="#0f172a" />
+  <rect x="85" y="45" width="230" height="115" rx="3" fill="#020617" />
+  <path d="M 45 175 L 355 175 L 335 190 L 65 190 Z" fill="#334155" />
+  <rect x="160" y="177" width="80" height="6" rx="2" fill="#dc2626" />
+  <text x="200" y="108" font-family="sans-serif" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle">MSI CYBORG 15</text>
+</svg>
