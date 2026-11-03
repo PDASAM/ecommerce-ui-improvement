@@ -221,20 +221,26 @@ body {
     min-height: 2.8em;
 }
 
-.product-link {
+
+.product-name {
     color: var(--text-primary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
 }
 
+
 /* 5.4 Tag thông số kỹ thuật (Specs Pills) */
+
 .specs-pills {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: 12px;
 }
+
+.product-name {
+    color: var(--text-primary);
+}
+
 
 .specs-pills li {
     font-size: 0.75rem;
@@ -411,3 +417,26 @@ body {
     }
 }
 
+
+/* BUOI 2 - CA NHAN: Cai thien hover va focus */
+
+.accordion-header {
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.accordion-header:hover {
+    background-color: #fff1f2;
+    color: var(--primary-hover);
+}
+
+.accordion-header:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: -3px;
+    background-color: #fff1f2;
+}
+
+.specs-accordion[open] .accordion-header {
+    background-color: #fff1f2;
+}
