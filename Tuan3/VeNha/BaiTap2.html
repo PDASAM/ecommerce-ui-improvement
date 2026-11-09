@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2 - CSS Basic</title>
+
+    <style>
+        /* ===== ĐỊNH DẠNG CHUNG ===== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f3f4f6;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        section {
+            margin: 30px 0;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .back-link {
+            color: #087d83;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== BÀI 2A =====
+           Xanh, căn giữa, đậm,
+           gạch chân, 30px
+        */
+
+        .ueh-text {
+            color: blue;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 30px;
+        }
+
+        /* ===== BÀI 2B =====
+           Đỏ mờ 50%, căn phải,
+           nghiêng, viền vàng chấm,
+           bo góc, nền xám, 15px
+        */
+
+        .faculty-text {
+            color: rgba(255, 0, 0, 0.5);
+            text-align: right;
+            font-style: italic;
+            font-size: 15px;
+
+            background-color: #d3d3d3;
+            border: 3px dotted yellow;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        /* ===== BÀI 2C =====
+           Hiệu ứng chữ BIT-UEH
+        */
+
+        .bit-text {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 10px 0;
+
+            background-color: #e7f5a5;
+            color: #d4ff68;
+
+            font-size: 52px;
+            font-weight: 900;
+            letter-spacing: 1px;
+
+            text-shadow:
+                1px 1px 0 #ffff00,
+                3px 3px 0 #ff0000,
+                5px 5px 0 #9d0017,
+                7px 7px 8px #8b0015,
+                0 0 12px #94e600;
+        }
+
+        /* ===== BÀI 2D =====
+           Logo BIT rộng 30px
+           Lặp lại và cố định
+        */
+
+        .logo-original {
+            display: block;
+            width: 150px;
+            height: auto;
+            margin: 12px 0 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+
+        .bit-background {
+            width: 100%;
+            height: 300px;
+
+            border: 2px solid #666;
+            border-radius: 8px;
+
+            /* Nền xám để dễ nhìn logo */
+            background-color: #e6e6e6;
+
+            /* Ảnh nằm trong VeNha/images */
+            background-image: url("./images/BIT%20logo.jpg");
+
+            /* Kích thước logo rộng 30px */
+            background-size: 30px auto;
+
+            /* Lặp lại theo cả hai chiều */
+            background-repeat: repeat;
+
+            /* Hình nền cố định */
+            background-attachment: fixed;
+
+            /* Vị trí bắt đầu của nền */
+            background-position: left top;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        /* ===== BÀI 2E =====
+           Xử lý văn bản tràn
+           Khung 100px x 50px
+        */
+
+        .overflow-box {
+            width: 100px;
+            height: 50px;
+
+            padding: 5px;
+            margin: 10px 0 25px;
+
+            border: 1px solid #333;
+            background-color: #e8f4ff;
+
+            font-size: 13px;
+        }
+
+        /* i. Ẩn nội dung tràn */
+        .overflow-hidden {
+            overflow: hidden;
+        }
+
+        /* ii. Hiển thị dấu ba chấm */
+        .overflow-ellipsis {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        /* iii. Không xuống dòng */
+        .overflow-nowrap {
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        /* ===== RESPONSIVE ===== */
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .bit-text {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <a href="./index.html" class="back-link">
+            ← Quay lại danh sách bài tập
+        </a>
+
+        <h1>BÀI TẬP 2 - ĐỊNH DẠNG CSS</h1>
+
+        <!-- ===== BÀI 2A ===== -->
+        <section>
+            <h2>a. Định dạng chữ Đại học UEH</h2>
+
+            <p class="ueh-text">
+                Đại học UEH
+            </p>
+        </section>
+
+        <!-- ===== BÀI 2B ===== -->
+        <section>
+            <h2>b. Định dạng chữ Khoa CNTTD</h2>
+
+            <p class="faculty-text">
+                Khoa CNTTD
+            </p>
+        </section>
+
+        <!-- ===== BÀI 2C ===== -->
+        <section>
+            <h2>c. Định dạng chữ BIT-UEH</h2>
+
+            <p class="bit-text">BIT-UEH</p>
+
+            <p class="note">
+                Sử dụng thuộc tính text-shadow
+                để tạo hiệu ứng chữ nhiều lớp.
+            </p>
+        </section>
+
+        <!-- ===== BÀI 2D ===== -->
+        <section>
+            <h2>
+                d. Logo BIT làm hình nền lặp lại và cố định
+            </h2>
+
+            <p>
+                Hình ảnh gốc được tải từ thư mục
+                images của dự án:
+            </p>
+
+            <!-- Hiển thị ảnh gốc để kiểm tra -->
+            <img
+                class="logo-original"
+                src="./images/BIT%20logo.jpg"
+                alt="Logo BIT - Khoa Công nghệ Thông tin Kinh doanh"
+            >
+
+            <p>
+                Hình nền bên dưới sử dụng logo BIT
+                kích thước 30px, lặp lại và cố định.
+            </p>
+
+            <!-- Khu vực hình nền -->
+            <div
+                class="bit-background"
+                role="img"
+                aria-label="Logo BIT lặp lại làm hình nền">
+            </div>
+
+            <p class="note">
+                CSS sử dụng background-image,
+                background-size, background-repeat
+                và background-attachment.
+            </p>
+        </section>
+
+        <!-- ===== BÀI 2E ===== -->
+        <section>
+            <h2>e. Xử lý nội dung văn bản bị tràn</h2>
+
+            <p>
+                Mỗi khung có chiều rộng 100px
+                và chiều cao 50px.
+            </p>
+
+            <!-- i -->
+            <h3>i. overflow: hidden</h3>
+
+            <div class="overflow-box overflow-hidden">
+                Nhu cầu xã hội Ngành Thương mại điện tử
+                (TMĐT) tại Việt Nam hiện nay đang có
+                những bước tăng trưởng mạnh mẽ và
+                ngày càng đóng góp nhiều hơn cho sự
+                phát triển kinh tế xã hội của đất nước.
+                Thị trường TMĐT Việt Nam đã trở nên
+                sôi động hơn khi có nhiều
+            </div>
+
+            <!-- ii -->
+            <h3>ii. text-overflow: ellipsis</h3>
+
+            <div class="overflow-box overflow-ellipsis">
+                Nhu cầu xã hội Ngành Thương mại điện tử
+                (TMĐT) tại Việt Nam hiện nay đang có
+                những bước tăng trưởng mạnh mẽ và
+                ngày càng đóng góp nhiều hơn cho sự
+                phát triển kinh tế xã hội của đất nước.
+                Thị trường TMĐT Việt Nam đã trở nên
+                sôi động hơn khi có nhiều
+            </div>
+
+            <!-- iii -->
+            <h3>iii. white-space: nowrap</h3>
+
+            <div class="overflow-box overflow-nowrap">
+                Nhu cầu xã hội Ngành Thương mại điện tử
+                (TMĐT) tại Việt Nam hiện nay đang có
+                những bước tăng trưởng mạnh mẽ và
+                ngày càng đóng góp nhiều hơn cho sự
+                phát triển kinh tế xã hội của đất nước.
+                Thị trường TMĐT Việt Nam đã trở nên
+                sôi động hơn khi có nhiều
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
