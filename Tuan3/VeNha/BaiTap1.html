@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài tập 1 - CSS Games</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6f8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 30px 20px;
+      background: #087d83;
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #087d83;
+      font-weight: bold;
+    }
+
+    .game-section {
+      margin-bottom: 30px;
+      padding: 24px;
+      background: white;
+      border-radius: 12px;
+    }
+
+    h2 {
+      color: #087d83;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .image-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .image-card a {
+      display: block;
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      background: #eee;
+    }
+
+    .image-card figcaption {
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .image-card.broken {
+      border-color: red;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      color: #666;
+    }
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>BÀI TẬP 1 - CSS GAMES</h1>
+    <p>Minh chứng hoàn thành CSS Diner và CSS Speedrun</p>
+  </header>
+
+  <main>
+
+    <a class="back-link" href="./index.html">
+      ← Quay lại danh sách bài tập
+    </a>
+
+    <!-- CSS DINER -->
+    <section class="game-section">
+      <h2>1. CSS Diner</h2>
+      <p>Minh chứng hoàn thành 32 level CSS Diner.</p>
+
+      <p>
+        <a href="https://flukeout.github.io/" target="_blank"
+           rel="noopener noreferrer">
+          Truy cập CSS Diner
+        </a>
+      </p>
+
+      <div id="diner-gallery" class="gallery"></div>
+    </section>
+
+    <!-- CSS SPEEDRUN -->
+    <section class="game-section">
+      <h2>2. CSS Speedrun</h2>
+      <p>Minh chứng hoàn thành các thử thách CSS Speedrun.</p>
+
+      <p>
+        <a href="https://css-speedrun.netlify.app/" target="_blank"
+           rel="noopener noreferrer">
+          Truy cập CSS Speedrun
+        </a>
+      </p>
+
+      <div id="speedrun-gallery" class="gallery"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Bài tập CSS - Tuần 3 | UEH</p>
+  </footer>
+
+  <script>
+    // Hàm thêm ảnh vào thư viện
+    function addScreenshot(container, src, label) {
+      const figure = document.createElement("figure");
+      figure.className = "image-card";
+
+      const link = document.createElement("a");
+      link.href = src;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+
+      const image = document.createElement("img");
+      image.src = src;
+      image.alt = "Minh chứng " + label;
+      image.loading = "lazy";
+
+      image.addEventListener("error", function () {
+        figure.classList.add("broken");
+        console.warn("Không tìm thấy ảnh:", src);
+      });
+
+      const caption = document.createElement("figcaption");
+      caption.textContent = label;
+
+      link.appendChild(image);
+      figure.append(link, caption);
+      container.appendChild(figure);
+    }
+
+    // CSS Diner: ảnh 1.png đến 32.png
+    const dinerGallery =
+      document.getElementById("diner-gallery");
+
+    for (let i = 1; i <= 32; i++) {
+      addScreenshot(
+        dinerGallery,
+        "./screenshots/css-diner/" + i + ".png",
+        "CSS Diner - Level " + i
+      );
+    }
+
+    // CSS Speedrun
+    const speedrunGallery =
+      document.getElementById("speedrun-gallery");
+
+    // Ảnh Intro
+    addScreenshot(
+      speedrunGallery,
+      "./screenshots/css-speedrun/intro.png",
+      "CSS Speedrun - Intro"
+    );
+
+    // Ảnh Level 1 đến 10
+    for (let i = 1; i <= 10; i++) {
+      addScreenshot(
+        speedrunGallery,
+        "./screenshots/css-speedrun/" + i + ".png",
+        "CSS Speedrun - Level " + i
+      );
+    }
+  </script>
+
+</body>
+</html>
